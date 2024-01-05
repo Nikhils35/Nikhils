@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #282c34;
+    color: #61dafb;
+}
+
+.clock-container {
+    text-align: center;
+}
+
+.clock {
+    display: inline-block;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+    .brand {
+      position: center;
+      bottom: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-weight: bold;
+      color: #555;
+      rotate: 0deg;
+      }
+
+.hours, .minutes, .seconds {
+    font-size: 2em;
+    padding: 0.2em;
+}
+
+		</style>
+		<script>
+		function updateClock() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+}
+
+setInterval(updateClock, 1000); // Update every second
+</script>
+		
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Amazing Digital Clock</title>
+</head>
+<body>
+    <div class="clock-container" id="digitalClock">
+        <div class="clock">
+            <div class="hours" id="hours"></div>
+            <div class="minutes" id="minutes"></div>
+            <div class="seconds" id="seconds"></div>
+        </div>
+    </div>
+    <!-- Brand Name -->
+    <div class="brand">Nikhil</div>
+    <script src="script.js"></script>
+    
+</body> 
+</html>
